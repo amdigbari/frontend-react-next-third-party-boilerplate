@@ -1,0 +1,11 @@
+# build
+**/dist/*
+
+# node_modules
+**/node_modules/*
+
+# editor configs
+**/.vscode/*
+
+# storybook preview file as it's sorting the styles
+**/.storybook/preview.js

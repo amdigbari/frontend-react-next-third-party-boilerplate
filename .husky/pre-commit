@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# build project to create dist directory before attempting to commit changes
+yarn type-check && yarn lint-staged
