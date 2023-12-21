@@ -1,4 +1,4 @@
-# third-party-boilerplate
+# Frontend React/Next Third-Party Boilerplate
 
 This project is a boilerplate for React or NextJs third party project configs. This means that third-parties with this template will be written in React/NextJs and should only be used in a React/NextJs project.
 
@@ -8,67 +8,16 @@ Keep in mind that you can change or remove any one of them on your own, Just rem
 
 ## Contents
 
-- [General Configs](#general-configs)
+- [General Configs](documentation/General.README.md)
 
-  - [Typescript](#typescript)
-  - [ESLint](#eslint)
-  - [StyleLint](#stylelint)
-  - [Prettier](#prettier)
+  - [Typescript](documentation/General.README.md#typescript)
+  - [ESLint](documentation/General.README.md#eslint)
+  - [StyleLint](documentation/General.README.md#stylelint)
+  - [Prettier](documentation/General.README.md#prettier)
 
-- [Git Configs](#git-configs)
-  - [CommitLint](#commitlint)
-  - [Commitizen](#commitizen)
-  - [Lint-Staged](#lint-staged)
-  - [Husky](#husky)
+- [Git Configs](documentation/Git.README.md)
 
-## General Configs
-
-### Typescript
-
-In this section we will discuss about the [Typescript](https://www.typescriptlang.org/) configuration.
-
-Under Maintenance.
-
-### ESLint
-
-In this section we will discuss about the [ESLint](https://eslint.org/) configuration.
-
-Under Maintenance.
-
-### StyleLint
-
-In this section we will discuss about the [StyleLint](https://stylelint.io/) configuration.
-
-Under Maintenance.
-
-### Prettier
-
-In this section we will discuss about the [Prettier](https://prettier.io/) configuration.
-
-Under Maintenance.
-
-## Git Configs
-
-### Commitlint
-
-In this section we will discuss about the [Commitlint](https://commitlint.js.org/#/) configuration.
-
-Under Maintenance.
-
-### Commitizen
-
-In this section we will discuss about the [Commitizen](https://github.com/commitizen/cz-cli) configuration.
-
-Under Maintenance.
-
-### Lint-Staged
-
-In this section we will discuss about the [Lint-Staged](https://github.com/lint-staged/lint-staged) configuration.
-
-Under Maintenance.
-
-### Husky
-
-In this section we will discuss about the [Husky](https://github.com/typicode/husky) configuration.
-
-Under Maintenance.
+  - [CommitLint](documentation/Git.README.md#commitlint)
+  - [Commitizen](documentation/Git.README.md#commitizen)
+  - [Lint-Staged](documentation/Git.README.md#lint-staged)
+  - [Husky](documentation/Git.README.md#husky)
