@@ -23,10 +23,7 @@
     "typeRoots": ["./node_modules/@types", "./src/@types"],
     "baseUrl": "src",
     "plugins": [
-      {
-        "transform": "@zerollup/ts-transform-paths",
-        "exclude": ["*"]
-      }
+      { "transform": "typescript-transform-paths", "afterDeclarations": true, "exclude": ["**/node_modules/**"] }
     ],
     "paths": {
       "*": ["*"]

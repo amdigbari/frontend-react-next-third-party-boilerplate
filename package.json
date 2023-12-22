@@ -30,21 +30,35 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky install && ts-patch install -s",
     "type-check": "tsc --noEmit --incremental false --emitDeclarationOnly false",
     "eslint": "eslint --no-error-on-unmatched-pattern 'src/**/*.{js,jsx,ts,tsx}'",
     "stylelint": "stylelint --allow-empty-input 'src/**/*.{css,scss}'",
     "lint": "yarn type-check & yarn eslint & yarn stylelint",
-    "commit": "cz"
+    "commit": "cz",
+    "build": "cross-env NODE_ENV=production rollup -c && node .release/build/change-build-node-modules.js && node .release/build/add-css-import.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-eslint": "^9.0.5",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-swc": "^0.3.0",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@rollup/pluginutils": "^5.1.0",
+    "@swc/core": "^1.3.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/acorn": "^4.0.6",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
-    "@zerollup/ts-transform-paths": "^1.7.18",
     "commitizen": "^4.3.0",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
@@ -54,10 +68,25 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-testing-library": "^6.2.0",
+    "estree-walker": "^2.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
+    "magic-string": "^0.25.7",
+    "next": "^14.0.4",
     "postcss": "^8.4.29",
     "prettier": "^3.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.29.4",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dotenv": "^0.5.0",
+    "rollup-plugin-gzip": "^3.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-stylelint": "^1.0.0",
+    "rollup-plugin-styles": "^4.0.0",
+    "rollup-plugin-visualizer": "^5.11.0",
+    "sass": "^1.69.5",
     "stylelint": "^16.0.2",
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-prettier-scss": "^1.0.0",
@@ -65,8 +94,20 @@
     "stylelint-config-standard-scss": "^12.0.0",
     "stylelint-no-unsupported-browser-features": "^7.0.0",
     "stylelint-scss": "^6.0.0",
-    "typescript": "^5.3.3"
+    "ts-patch": "^3.1.1",
+    "typescript": "^5.3.3",
+    "typescript-transform-paths": "^3.4.6"
   },
-  "peerDependencies": {},
-  "peerDependenciesMeta": {}
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  }
 }

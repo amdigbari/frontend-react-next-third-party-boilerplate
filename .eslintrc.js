@@ -14,10 +14,7 @@ module.exports = {
     'plugin:storybook/recommended',
   ],
   plugins: ['@typescript-eslint'],
-  parserOptions: {
-    sourceType: 'module',
-    ecmaVersion: 2022,
-  },
+  parserOptions: { sourceType: 'module', ecmaVersion: 2022 },
   rules: {
     '@next/next/no-html-link-for-pages': 'off',
     'react/jsx-key': 'error',
@@ -25,23 +22,12 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
-      {
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-        caughtErrorsIgnorePattern: '^_',
-      },
+      { argsIgnorePattern: '^_', varsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' },
     ],
     '@typescript-eslint/no-non-null-assertion': 'off',
     'no-var': 'error',
     semi: 'off',
-    indent: [
-      'error',
-      2,
-      {
-        ignoredNodes: ['TemplateLiteral'],
-        SwitchCase: 1,
-      },
-    ],
+    indent: ['error', 2, { ignoredNodes: ['TemplateLiteral'], SwitchCase: 1 }],
     'prefer-const': 'error',
     'no-debugger': 'error',
     'no-console': 'error',
@@ -54,29 +40,30 @@ module.exports = {
      * @example overriding default configs to testing-library/react for test files.
      */
     {
-      files: [
-        '**/__tests__/**/*.[jt]s?(x)',
-        '**/?(*.)+(spec|test).[jt]s?(x)',
-        '**/__mocks__/**/*.[jt]s?(x)',
-      ],
-      env: {
-        jest: true,
-      },
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)', '**/__mocks__/**/*.[jt]s?(x)'],
+      env: { jest: true },
       extends: ['plugin:testing-library/react', 'plugin:jest/recommended'],
       rules: {
-        'import/no-extraneous-dependencies': [
-          'off',
-          { devDependencies: ['**/?(*.)+(spec|test).[jt]s?(x)'] },
-        ],
+        'import/no-extraneous-dependencies': ['off', { devDependencies: ['**/?(*.)+(spec|test).[jt]s?(x)'] }],
         '@typescript-eslint/no-explicit-any': 'off',
       },
     },
     {
       files: ['*.js'],
-      rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-      },
+      rules: { '@typescript-eslint/no-var-requires': 'off' },
     },
   ],
-  ignorePatterns: ['node_modules', 'styles', 'dist', '.vscode', '.storybook'],
+  ignorePatterns: [
+    'node_modules',
+    'styles',
+    'dist',
+    '.vscode',
+    '.storybook',
+    '!.release',
+    'libs/**/*.d.ts',
+    'libs/**/*.js',
+    '*.css',
+    '*.scss',
+    '*.sass',
+  ],
 }

@@ -1,0 +1,5 @@
+@use 'sass:color';
+
+@function hex-to-rgb($hex) {
+  @return color.red($hex), color.green($hex), color.blue($hex);
+}
